@@ -1,0 +1,204 @@
+﻿<Window x:Class="Psychomatrix.Controller.UI.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Psychomatrix" xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+        Title="Pythagoras Psychomatrix" Height="480" Width="852" Loaded="Window_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Menu Grid.Column="0" Grid.Row="0">
+            <MenuItem Header="File">
+                <MenuItem Name="OpenMenuItem"  Header="Open" Click="OpenMenuItem_Click" />
+                <MenuItem Name="SaveMenuItem" Header="Save" Click="SaveMenuItem_Click" />
+            </MenuItem>
+            <MenuItem Header="Edit" >
+                <MenuItem Name="UnblockMenuItem" Header="Unblock" Click="UnblockMenuItem_Click" ></MenuItem>
+                <MenuItem Name="BlockMenuItem" Header="Block" Click="BlockMenuItem_Click" ></MenuItem>
+                <MenuItem Name="ClearMenuItem" Header="Clear" Click="ClearMenuItem_Click" ></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Tools" >
+                <MenuItem Name="RestartMenuItem" Header="Restart" Click="RestartMenuItem_Click" ></MenuItem>
+                <MenuItem Name="ExitMenuItem" Header="Exit" Click="ExitMenuItem_Click" ></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Info" >
+                <MenuItem Name="DateMenuItem" Header="Date" ></MenuItem>
+                <MenuItem Name="TimeMenuItem" Header="Time" ></MenuItem>
+                <MenuItem Name="StopwatchMenuItem" Header="Stopwatch" ></MenuItem>
+                <MenuItem Name="OSMenuItem" Header="OS" ></MenuItem>
+                <MenuItem Name="LocationMenuItem" Header="Location" ></MenuItem>
+                <MenuItem Name="LANIPMenuItem" Header="LAN IP" ></MenuItem>
+                <MenuItem Name="WANIPMenuItem" Header="WAN IP" ></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Help" >
+                <MenuItem Name="AboutMenuItem" Header="About" Click="AboutMenuItem_Click" ></MenuItem>
+                <MenuItem Name="AuthorMenuItem" Header="Author" Click="AuthorMenuItem_Click" ></MenuItem>
+            </MenuItem>
+        </Menu>
+        <TabControl Grid.Column="0" Grid.Row="1">
+            <TabItem>
+                <TabItem.Header>
+                    <Span FontWeight="Bold">One Day</Span>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <GroupBox Grid.Column="0" Grid.Row="0">
+                        <GroupBox.Header>
+                            <Span FontWeight="Bold">Input</Span>
+                        </GroupBox.Header>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Select Date of Birthday" FontWeight="Bold" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0"/>
+                            <DatePicker Name="DateDatePicker" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" SelectedDateFormat="Short"/>
+                            <Button Content="Calculate" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Click="CalculateDay"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Grid.Column="0" Grid.Row="1">
+                        <GroupBox.Header>
+                            <Span FontWeight="Bold">Output</Span>
+                        </GroupBox.Header>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Calculation" FontWeight="Bold" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="0"/>
+                            <TextBox Name="LogTextBox" Text="" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" IsReadOnly = "True" TextWrapping="Wrap" AcceptsReturn="True" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto"/>
+                            <Label Content="Matrix" FontWeight="Bold" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="0"/>
+                            <Label Content="Description" FontWeight="Bold" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="0"/>
+                            <TextBox Name="DescTextBox" Text="" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="1" IsReadOnly = "True" TextWrapping="Wrap" AcceptsReturn="True" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto"/>
+                            <Grid Grid.Column="1" Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <TextBox Name="TextBox0" VerticalContentAlignment="Center" Text="" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" IsReadOnly = "True" TextWrapping="Wrap" AcceptsReturn="True" TextAlignment="Center" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled"/>
+                                <TextBox Name="TextBox1" VerticalContentAlignment="Center" Text="" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" IsReadOnly = "True" TextWrapping="Wrap" AcceptsReturn="True" TextAlignment="Center" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled"/>
+                                <TextBox Name="TextBox2" VerticalContentAlignment="Center" Text="" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" IsReadOnly = "True" TextWrapping="Wrap" AcceptsReturn="True" TextAlignment="Center" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled"/>
+                                <TextBox Name="TextBox3" VerticalContentAlignment="Center" Text="" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="1" IsReadOnly = "True" TextWrapping="Wrap" AcceptsReturn="True" TextAlignment="Center" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled"/>
+                                <TextBox Name="TextBox4" VerticalContentAlignment="Center" Text="" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="1" IsReadOnly = "True" TextWrapping="Wrap" AcceptsReturn="True" TextAlignment="Center" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled"/>
+                                <TextBox Name="TextBox5" VerticalContentAlignment="Center" Text="" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1" IsReadOnly = "True" TextWrapping="Wrap" AcceptsReturn="True" TextAlignment="Center" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled"/>
+                                <TextBox Name="TextBox6" VerticalContentAlignment="Center" Text="" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="1" IsReadOnly = "True" TextWrapping="Wrap" AcceptsReturn="True" TextAlignment="Center" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled"/>
+                                <TextBox Name="TextBox7" VerticalContentAlignment="Center" Text="" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="1" IsReadOnly = "True" TextWrapping="Wrap" AcceptsReturn="True" TextAlignment="Center" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled"/>
+                                <TextBox Name="TextBox8" VerticalContentAlignment="Center" Text="" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="1" IsReadOnly = "True" TextWrapping="Wrap" AcceptsReturn="True" TextAlignment="Center" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled"/>
+                                <TextBox Name="TextBox9" VerticalContentAlignment="Center" Text="" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="1" IsReadOnly = "True" TextWrapping="Wrap" AcceptsReturn="True" TextAlignment="Center" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled"/>
+                                <TextBox Name="TextBox10" VerticalContentAlignment="Center" Text="" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="1" IsReadOnly = "True" TextWrapping="Wrap" AcceptsReturn="True" TextAlignment="Center" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled"/>
+                                <TextBox Name="TextBox11" VerticalContentAlignment="Center" Text="" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="1" IsReadOnly = "True" TextWrapping="Wrap" AcceptsReturn="True" TextAlignment="Center" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled"/>
+                                <TextBox Name="TextBox12" VerticalContentAlignment="Center" Text="" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="1" IsReadOnly = "True" TextWrapping="Wrap" AcceptsReturn="True" TextAlignment="Center" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled"/>
+                                <TextBox Name="TextBox0S" VerticalContentAlignment="Center" Text="" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="1" IsReadOnly = "True" TextWrapping="Wrap" AcceptsReturn="True" TextAlignment="Center" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled"/>
+                                <TextBox Name="TextBox1S" VerticalContentAlignment="Center" Text="" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="1" IsReadOnly = "True" TextWrapping="Wrap" AcceptsReturn="True" TextAlignment="Center" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled"/>
+                                <TextBox Name="TextBox2S" VerticalContentAlignment="Center" Text="" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="1" IsReadOnly = "True" TextWrapping="Wrap" AcceptsReturn="True" TextAlignment="Center" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled"/>
+                                <TextBox Name="TextBox3S" VerticalContentAlignment="Center" Text="" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="1" IsReadOnly = "True" TextWrapping="Wrap" AcceptsReturn="True" TextAlignment="Center" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled"/>
+                                <Label Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="5">
+                                    <TextBlock Text="Green - Normal | Yellow - Not Normal | Red - Empty" TextWrapping="Wrap" />
+                                </Label>
+                            </Grid>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <Span FontWeight="Bold">Month</Span>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <GroupBox Grid.Column="0" Grid.Row="0">
+                        <GroupBox.Header>
+                            <Span FontWeight="Bold">Input</Span>
+                        </GroupBox.Header>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Select any day in Month" FontWeight="Bold" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0"/>
+                            <DatePicker Name="MonthDatePicker" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" SelectedDateFormat="Short"/>
+                            <Button Content="Calculate" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Click="CalculateMonth"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Grid.Column="0" Grid.Row="1">
+                        <GroupBox.Header>
+                            <Span FontWeight="Bold">Output</Span>
+                        </GroupBox.Header>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Table" FontWeight="Bold" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
+                            <Label Content="Chart" FontWeight="Bold" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0"/>
+                            <DataGrid Name="MonthDataGrid" ItemsSource="{Binding}" LoadingRow="DataGrid_LoadingRow" Grid.Column="0" Grid.Row="1"></DataGrid>
+                            <Grid Grid.Column="1" Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Content="Select parametr" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
+                                <ComboBox Name="ParamComboBox" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0"/>
+                                <Button Content="Change" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="0" Click="ChangeGraphic"/>
+                                <WpfPlot Name="WpfPlot" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1"/>
+                            </Grid>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

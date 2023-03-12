@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "tBJLQI6YmTFkc6UiVmrrcBQDoSDdmEokZybd8LkhbTh1wefR2Iu8gvTmpAT3kW4GaHCMjn9y944xAHsoQX3tkw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ASUS\\Desktop\\Psychomatrix\\Psychomatrix\\Psychomatrix.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.dependencyvalidation.analyzers\\0.11.0\\microsoft.dependencyvalidation.analyzers.0.11.0.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\scottplot\\4.0.48\\scottplot.4.0.48.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\scottplot.wpf\\4.0.48\\scottplot.wpf.4.0.48.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
