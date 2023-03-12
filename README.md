@@ -1,5 +1,5 @@
 # pythagorean_psychomatrix
-Pythagoras Square and Psychomatrix in Numerology. 
+Pythagoras Square and Psychomatrix in Numerology. \
 Numerical and Text Describe. Data Grid Table. Line Chart. \
 WPF. MVC Code Style. \
 Educational Project. 
